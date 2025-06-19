@@ -5,7 +5,7 @@ import com.hcl.enums.Role;
 
 public class Biller {
 private Long billerId;
-private String bollerName;
+private String billerName;
 private String billerEmail;
 private String billerPassword;
 private String about;

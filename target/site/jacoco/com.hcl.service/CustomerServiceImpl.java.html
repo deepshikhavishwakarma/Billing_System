@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CustomerServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PaymentSystem</a> &gt; <a href="index.source.html" class="el_package">com.hcl.service</a> &gt; <span class="el_source">CustomerServiceImpl.java</span></div><h1>CustomerServiceImpl.java</h1><pre class="source lang-java linenums">package com.hcl.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.hcl.entity.Biller;
+import com.hcl.entity.Customer;
+import com.hcl.enums.Role;
+import com.hcl.repository.BillerRepository;
+import com.hcl.repository.CustomerRepository;
+
+@Service
+<span class="nc" id="L15">public class CustomerServiceImpl implements CustomerService {</span>
+
+	@Autowired
+	private CustomerRepository customerRepository;
+
+	@Autowired
+	private BillerRepository billerRepository;
+
+	@Override
+	public Customer registerCustomer(Customer customer) {
+<span class="nc" id="L25">		String email = customer.getCustEmail();</span>
+<span class="nc bnc" id="L26" title="All 4 branches missed.">		if (customerRepository.findByEmail(email) != null || billerRepository.findByEmail(email) != null) {</span>
+<span class="nc" id="L27">			return null;</span>
+		}
+<span class="nc" id="L29">		customer.setActive(true);</span>
+<span class="nc" id="L30">		customer.setRole(Role.CUSTOMER);</span>
+<span class="nc" id="L31">		return customerRepository.save(customer);</span>
+	}
+
+	@Override
+	public Customer loginCustomer(String email, String password) {
+		
+<span class="nc" id="L37">		return customerRepository.findByEmailAndPassword(email ,password);</span>
+	}
+
+	@Override
+	public Customer getCustomerById(Long customerId) {
+		
+<span class="nc" id="L43">		return customerRepository.findById(customerId).orElse(null);</span>
+	}
+
+	@Override
+	public Customer updateCustomer(Customer customer) {
+<span class="nc" id="L48">		return customerRepository.save(customer);</span>
+	}
+
+	@Override
+	public List&lt;Biller&gt; registeredBiller(Long customerId) {
+		// TODO Auto-generated method stub
+<span class="nc" id="L54">		return null;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

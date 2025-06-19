@@ -34,14 +34,17 @@
 	<div
 		class="container d-flex justify-content-center mt-1 p-5 border rounded shadow w-50">
 		<form action="/biller/register" method="post">
-			<div class="message text-center mb-2 fw-bold text-info">
-				Registration messages will appear here.</div>
+			
+				
+				<div class="message text-center mb-2 fw-bold text-info" th:if="${message}" th:text="${message}">
+    Registration messages will appear here.
+</div>
 
 			<span class="text text-center mb-2 fs-2 fw-bold text-primary ">Biller
 				Registration</span>
 			<div class="mb-1">
 				<label for="billerName" class="form-label">Enter
-					Organisation Name</label> <input type="text" class="form-control"
+					Organization Name</label> <input type="text" class="form-control"
 					id="billerName" name="billerName" required>
 			</div>
 			<div class="mb-1">
@@ -57,7 +60,7 @@
 					required>
 			</div>
 			<div class="mb-2">
-				<label for="about" class="form-label">About Organisation</label>
+				<label for="about" class="form-label">About Organization</label>
 				<textarea class="form-control" id="about" rows="2" name="about"
 					required></textarea>
 			</div>

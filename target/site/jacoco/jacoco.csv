@@ -1,0 +1,14 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+PaymentSystem,com.hcl.enums,BillerCategory,188,0,0,0,9,0,2,0,2,0
+PaymentSystem,com.hcl.enums,Role,34,0,0,0,6,0,2,0,2,0
+PaymentSystem,com.hcl.enums,PaymentStatus,45,0,0,0,5,0,2,0,2,0
+PaymentSystem,com.hcl.enums,ProductCategory,188,0,0,0,9,0,2,0,2,0
+PaymentSystem,com.hcl.enums,BillStatus,45,0,0,0,7,0,2,0,2,0
+PaymentSystem,com.hcl.controllers,HomeController,76,0,8,0,24,0,10,0,6,0
+PaymentSystem,com.hcl.controllers,HomeControllerTest,5,0,0,0,2,0,2,0,2,0
+PaymentSystem,com.hcl.entity,Order,73,0,0,0,30,0,15,0,15,0
+PaymentSystem,com.hcl.entity,Biller,3,0,0,0,1,0,1,0,1,0
+PaymentSystem,com.hcl.entity,Customer,76,0,0,0,32,0,16,0,16,0
+PaymentSystem,com.hcl.entity,Product,3,0,0,0,1,0,1,0,1,0
+PaymentSystem,com.hcl.main,BillingSystemApplication,5,3,0,0,2,1,1,1,1,1
+PaymentSystem,com.hcl.service,CustomerServiceImpl,52,0,4,0,11,0,8,0,6,0
